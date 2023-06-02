@@ -12,7 +12,34 @@ public class Factorial {
 
     public static void main(String[] args) {
 
+            int number = 5;
 
+            // Using recursion
+            int factorialRecursive = calculateFactorialRecursive(number);
+            System.out.println("Factorial (Recursive): " + factorialRecursive);
+
+            // Using iteration
+            int factorialIterative = calculateFactorialIterative(number);
+            System.out.println("Factorial (Iterative): " + factorialIterative);
+        }
+
+        // Method to calculate factorial using recursion
+        public static int calculateFactorialRecursive(int n) {
+            if (n == 0 || n == 1) {
+                return 1;
+            } else {
+                return n * calculateFactorialRecursive(n - 1);
+            }
+        }
+
+        public static int calculateFactorialIterative(int n) {
+            int factorial = 1;
+            for (int i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+            return factorial;
+        }
     }
 
-}
+
+
