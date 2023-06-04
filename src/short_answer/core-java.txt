@@ -248,58 +248,127 @@ Answer: A constructor is a special method in a class that is used to initialize 
         not have a return type.
 
 Can we have multiple constructors in a class?
-Answer:
+Answer: Yes, it is possible to have multiple constructors in a class.
 
 If we don't have a constructor declared, what is called during the object creation?
-Answer:
+Answer: If a class doesn't have any explicitly declared constructors, Java provides a default constructor. The default
+constructor is called implicitly during object creation using the new keyword. It initializes the instance variables with
+their default values (0, false, null).
 
 What is "this" keyword in Java? When would we use it?
-Answer:
+Answer: In Java, the "this" keyword is a reference to the current object within a class. It is used to refer to the instance
+variables and methods of the current object.
 
 What is "super" keyword in Java? What are some scenarios we would use it?
-Answer:
+Answer: In Java, the "super" keyword is used to refer to the immediate parent class of a subclass.
+
+        The "super" keyword can be used in the following scenarios:
+
+        1. Accessing superclass members: When a subclass overrides a method or hides a field from its superclass, we can
+           use the "super" keyword to access the superclass's version of the method or field.
+
+        2. Invoking superclass constructors: When creating an object of a subclass, we can use the "super" keyword to
+           explicitly call the constructor of the superclass. This is useful when the superclass has some initialization
+           logic that needs to be executed.
+
+        3. Providing explicit super() call: If a constructor in a subclass does not explicitly call a superclass constructor
+           using the "super" keyword, the Java compiler automatically inserts a call to the no-argument constructor of the
+           superclass. However, if the superclass does not have a no-argument constructor, we need to use the "super"
+           keyword to explicitly call the appropriate superclass constructor.
+
+        4. Resolving name conflicts: If a subclass inherits a method or field with the same name as one in its superclass,
+           we can use the "super" keyword to explicitly refer to the superclass's method or field.
 
 What does JVM stand for?
-Answer:
+Answer: JVM stands for Java Virtual Machine.
 
 Is JVM platform independent?
-Answer:
+Answer: Yes, JVM is platform independent.
 
 What version of Java are you using?
-Answer:
+Answer: Java version "17.0.7"
 
 What does JAR stand for?
-Answer:
+Answer: JAR stands for Java Archive.
 
 What is the difference between JDK and JVM?
-Answer:
+Answer: JDK (Java Development Kit) is used for developing Java applications and includes tools, compilers, and libraries.
+JVM (Java Virtual Machine) is responsible for executing Java bytecode and provides a runtime environment for Java
+applications to run.
 
 What is the difference between JVM and JRE?
-Answer:
+Answer: JVM (Java Virtual Machine) is a virtual machine that executes Java bytecode. It is responsible for interpreting
+        or just-in-time compiling the bytecode and running Java applications.
+
+        JRE (Java Runtime Environment) is a package that includes JVM along with essential libraries and files required
+        to run Java applications. It provides the necessary runtime environment for executing Java programs, but it does
+        not include development tools like compilers and debuggers, which are included in JDK (Java Development Kit).
 
 Explain the difference between compile-time and run-time?
-Answer:
+Answer: Compile-time: Refers to the phase where the code is compiled and checked for errors before execution.
+
+        Run-time: Refers to the actual execution of the code and the occurrence of any errors or exceptions during execution.
 
 What is heap?
-Answer:
+Answer: Heap is a region of a computer's memory where objects are dynamically allocated during runtime.
 
 How does Java manage its memory?
-Answer:
+Answer: Java manages its memory using automatic memory management through a process called garbage collection. Objects
+are allocated memory in the heap, and the garbage collector frees memory occupied by objects that are no longer reachable.
+This eliminates the need for manual memory deallocation and reduces the risk of memory leaks. The JVM employs various
+optimization techniques to minimize the impact of garbage collection on performance. Overall, Java's memory management
+simplifies memory handling for developers and provides a reliable runtime environment.
 
 What is the difference between String, StringBuffer and StringBuilder?
-Answer:
+Answer: The main differences between String, StringBuffer, and StringBuilder are as follows:
+
+        1. Immutability: String objects are immutable, meaning they cannot be changed once created. StringBuffer and
+           StringBuilder, on the other hand, are mutable and allow modifications to their contents.
+
+        2. Thread Safety: StringBuffer is designed to be thread-safe, meaning it provides synchronized methods to ensure
+           multiple threads can safely access and modify its content. StringBuilder is not thread-safe, making it more
+           efficient in single-threaded scenarios.
+
+        3. Performance: StringBuilder is the most efficient in terms of performance because it is not thread-safe and
+           does not incur the synchronization overhead of StringBuffer. String concatenation using StringBuilder is
+           generally faster than using StringBuffer or repeatedly concatenating strings.
+
+        4. Usage: String is commonly used for storing and manipulating immutable sequences of characters. StringBuffer
+           and StringBuilder are used when there is a need for mutable strings, such as when frequent modifications are
+           required, like in string concatenation operations.
 
 What is Singleton class?
-Answer:
+Answer: Singleton class is a class that allows only one instance of itself to be created and provides a global point of
+access to that instance. It is a design pattern used when we want to ensure that only a single instance of a class exists
+throughout the application.
 
 What is Serialization and Deserialization?
-Answer:
+Answer: Serialization is the process of converting an object's state into a byte stream, which can be stored in a file or
+        transferred over a network. In Java, serialization is achieved by implementing the Serializable interface, which
+        marks a class as serializable. When an object is serialized, its instance variables are converted into a stream
+        of bytes, including the object's data and type information.
+
+        Deserialization, on the other hand, is the process of reconstructing an object from the serialized byte stream.
+        It involves reading the byte stream and converting it back into an object with its original state. In Java,
+        deserialization is performed using the ObjectInputStream class, which reads the byte stream and constructs the
+        object by creating a new instance and setting its state based on the serialized data.
 
 Explain the difference between While and Do..While loops?
-Answer:
+Answer: 1. The while loop checks the condition before executing the loop body.
+
+        2. The do-while loop executes the loop body first and then checks the condition.
+
+        3. while loop may not execute at all if the condition is false from the beginning.
+
+        4. do-while loop always executes the loop body at least once.
+
+        5. The choice between while and do-while depends on the specific requirements of the program.
 
 What is Enum?
-Answer:
+Answer: Enums in Java are special data types used to define a fixed set of constants. They provide a way to represent a
+collection of related values and restrict the possible values of a variable. Enums improve code readability, maintainability,
+and type safety. They can have associated properties, methods, and behaviors, and can be used in switch statements, loop
+iterations, and as method parameters or return types.
 
 What is Iterator?
 Answer:
